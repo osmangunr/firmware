@@ -1,0 +1,29 @@
+name: Ozel Meshtastic Derleme
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu Indir
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: PlatformIO Kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Derle (meshtastic-diy-v1)
+        run: |
+          pip install platformio
+          pio run -e meshtastic-diy-v1
+
+      - name: Dosyayi Paketle (Artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: meshtastic-diy-v1-bin
+          path: .pio/build/meshtastic-diy-v1/*.bin
