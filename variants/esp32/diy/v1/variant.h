@@ -18,15 +18,15 @@
 #define LED_POWER 2         // add status LED (compatible with core-pcb and DIY targets)
 
 #define LORA_DIO0 26  // a No connect on the SX1262/SX1268 module
-#define LORA_RESET 23 // RST for SX1276, and for SX1262/SX1268
-#define LORA_DIO1 33  // IRQ for SX1262/SX1268
-#define LORA_DIO2 32  // BUSY for SX1262/SX1268
+#define LORA_RESET 14 // RST for SX1276, and for SX1262/SX1268
+#define LORA_DIO1 27  // IRQ for SX1262/SX1268
+#define LORA_DIO2 26  // BUSY for SX1262/SX1268
 #define LORA_DIO3     // Not connected on PCB, but internally on the TTGO SX1262/SX1268, if DIO3 is high the TXCO is enabled
 
-#define LORA_SCK 5
+#define LORA_SCK 18
 #define LORA_MISO 19
-#define LORA_MOSI 27
-#define LORA_CS 18
+#define LORA_MOSI 23
+#define LORA_CS 5
 
 // supported modules list
 #define USE_RF95 // RFM95/SX127x
