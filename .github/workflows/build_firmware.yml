@@ -1,22 +1,27 @@
 name: Build
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       version:
+        description: 'Firmware Version'
         required: true
+        default: '2.5.0.custom'
         type: string
       platform:
+        description: 'Platform'
         required: true
+        default: 'esp32'
         type: string
       pio_env:
+        description: 'PlatformIO Environment'
         required: true
+        default: 'meshtastic-diy-v1'
         type: string
-    secrets:
-      MEMBROWSE_API_KEY:
-        required: false
 
-permissions: read-all
+permissions:
+  contents: read
+  actions: read
 
 jobs:
   pio-build:
